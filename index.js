@@ -42,7 +42,7 @@ inquirer.prompt([
   },
   {
     type: "input",
-    name: "E-mail",
+    name: "Email",
     message: "What is your e-mail?",
   },
   {

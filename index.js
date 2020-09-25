@@ -3,7 +3,7 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
-inquirer.prompt([
+const questions = [
   {
     type: "input",
     name: "Title",
@@ -17,7 +17,7 @@ inquirer.prompt([
   {
     type: "input",
     name: "Installation",
-    message: "What is the installation proces for the project?",
+    message: "What is the installation process for the project?",
   },
   {
     type: "input",
@@ -50,7 +50,7 @@ inquirer.prompt([
     name: "Github",
     message: "What is your Github username?",
   },
-]);
+];
 
 // function to write README file
 function writeToFile(fileName, data) {

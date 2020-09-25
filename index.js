@@ -53,10 +53,20 @@ inquirer.prompt([
 ]);
 
 // function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFileSync(fileName, data, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  });
+}
 
 // function to initialize program
-function init() {}
+function init() {
+  inquirer.prompt(questions).then(function (answers) {
+    writeToFile("GeneratedMarkdown.md", generateMarkdown(answers));
+  });
+}
 
 // function call to initialize program
 init();
